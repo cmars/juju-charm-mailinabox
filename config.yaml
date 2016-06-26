@@ -1,0 +1,4 @@
+options:
+  hostname:
+    type: string
+    description: "Primary hostname of the mailinabox server."
