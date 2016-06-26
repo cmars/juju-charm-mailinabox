@@ -12,34 +12,39 @@ From the [Mail-in-a-Box project homepage](https://mailinabox.email):
 # Usage
 
 Before deploying mailinabox, you'll need to obtain a public domain name,
-`yourdomain.email` for example. Give your new deployment a hostname like
-`box.yourdomain.email`, and deploy with:
+`yourdomain.email` for example. Choose a fully-qualified hostname for your
+mailinabox, like `box.yourdomain.email`, and then deploy with:
 
     juju deploy cs:~cmars/trusty/mailinabox
     juju set-config mailinabox hostname=box.yourdomain.email
     juju expose mailinabox
 
 Once mailinabox is installed and running, open a browser to
-https://box.yourdomain.email/admin and follow the directions there to complete
-setup.
+"https://box.yourdomain.email/admin" (or https://public-ip/admin if that's not
+working yet) to manage it. The admin console is very helpful, and guides you
+though all kinds of things like:
 
-## Fallback
-
-If mailinabox fails to obtain a Let's Encrypt certificate, you'll need to
-browse to https://public-ip/admin and follow the directions to obtain the
-necessary TLS certificates manually.
+* DNS configuration
+* TLS certificates
+* Mail stuff
+* Backups
 
 ## Known Limitations and Issues
+
+mailinabox displays the fingerprint of the self-signed certificate, which
+should be checked when accessing the admin console by IP address initially.
+Need a way to display this.
 
 The generated admin password is currently worse than the kind of password an
 idiot would put on his luggage. Not ready for general use yet.
 
-This charm is not designed to "scale". mailinabox is primarily intended as an
-all-in-one standalone personal email server. If you wanted something else,
-mailinabox (and this charm) probably aren't for you. Adding units will probably
-do unexpected, undesirable things.
+This charm is not designed to "scale". mailinabox is an all-in-one standalone
+personal email server. Adding units will probably do unexpected, undesirable
+things. Don't.
 
 mailinabox currently installs haveged, which I disagree with.
+
+Upgrades currently aren't managed.
 
 # Contact Information
 
@@ -51,16 +56,16 @@ https://mailinabox.email.
 
 # License
 
-   Copyright 2016 Casey Marshall
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+    Copyright 2016 Casey Marshall
+    
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    
+        http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
