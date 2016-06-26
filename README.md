@@ -1,6 +1,6 @@
 # Overview
 
-From the [Mail-in-a-Box project homepage][https://mailinabox.email]:
+From the [Mail-in-a-Box project homepage](https://mailinabox.email):
 
 >Mail-in-a-Box lets you become your own mail service provider in a few easy
 >steps. It’s sort of like making your own gmail, but one you control from top to
